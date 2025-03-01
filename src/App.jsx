@@ -1,11 +1,17 @@
-import './App.css'
-
-function App() {
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LoginPage from "./pages/Login";
+import HomePage from "./pages/Home"
+import ProfilePage from "./pages/ProfilePage";
+import SignUpPage from "./pages/SignUp";
+export default function App() {
   return (
-    <>
-      <h1 className='underline'>Hello world!</h1>
-    </>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/profile" element={<ProfilePage/>} />
+        <Route path="/register" element={<SignUpPage/>} />
+      </Routes>
+    </Router>
+  );
 }
-
-export default App
